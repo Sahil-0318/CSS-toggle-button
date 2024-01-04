@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        input{
+            display: none;
+            
+        }
+        label{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100px;
+            height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            display: block;
+            background-color: rgb(196, 188, 173);
+            box-shadow: 5px 5px  8px grey inset,-5px -5px  8px grey inset;
+            transition: all 300ms;
+        }
+        
+        label::before{
+            content: "";
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: black ;
+            position: absolute;
+            top: 50%;
+            left: 6px;
+            transform: translateY(-50%);
+            transition: all 300ms;
+        }
+        input:checked ~ label{
+            background-color: rgb(84, 165, 227);
+            box-shadow: 5px 5px  8px rgb(6, 64, 108)inset, -5px -5px  8px rgb(6, 64, 108) inset;
+        }
+        input:checked + label::before{
+            left: 54px;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="myToggle" id="toggle">
+    <label for="toggle"></label>
+</body>
+</html>
